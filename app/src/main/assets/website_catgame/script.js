@@ -18,8 +18,8 @@ function setup() {
   // print("start setup");
   createCanvas(windowWidth, windowHeight, WEBGL);
   miceMax = int(windowWidth / 256);
-  if (miceMax == 0) {
-    miceMax = 1;
+  if (miceMax < 2) {
+    miceMax = 2;
   }
   for (let i = 0; i < miceMax; i++) {
     // print("try:", i)
