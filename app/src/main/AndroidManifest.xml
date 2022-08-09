@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.elbourn.andriod.catgame">
+    package="com.elbourn.android.catgame">
 
     <application
         android:allowBackup="true"
@@ -14,7 +14,7 @@
         android:theme="@style/Theme.CatGame"
         tools:targetApi="31">
         <activity
-            android:name=".DisclaimerActivity"
+            android:name="com.elbourn.android.catgame.DisclaimerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,8 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".IntroActivity" android:exported="false"/>
-        <activity android:name=".MainActivity" android:exported="false"/>
+        <activity android:name="com.elbourn.android.catgame.IntroActivity" android:exported="false"/>
+        <activity android:name="com.elbourn.android.catgame.MainActivity" android:exported="false"/>
     </application>
 
 </manifest>
