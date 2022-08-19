@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "end onResume");
     }
 
-
-
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        finishAffinity();
+    }
 }
