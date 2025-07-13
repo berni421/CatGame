@@ -70,11 +70,11 @@ public class IntroActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Log.i(TAG, "start onBackPressed");
-        finishAffinity();
-        Log.i(TAG, "end onBackPressed");
-    }
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        Log.i(TAG, "start onBackPressed");
+//        finishAffinity();
+//        Log.i(TAG, "end onBackPressed");
+//    }
 }

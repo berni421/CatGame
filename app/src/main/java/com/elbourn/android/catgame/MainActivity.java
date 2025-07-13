@@ -1,10 +1,12 @@
 package com.elbourn.android.catgame;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.webkit.WebViewAssetLoader;
 import androidx.webkit.WebViewClientCompat;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     WebView myWebView;
     String url = "https://appassets.androidplatform.net/assets/website_catgame/index.html";
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         myWebView.loadUrl(url);
+
+        // Handle back pressed
+        OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // the 3 lines below replace the functionality of super.onBackPressed();
+                setEnabled(false);
+                getOnBackPressedDispatcher().onBackPressed();
+                setEnabled(true);
+                // any additional code
+                Log.i(TAG, "handleOnBackPressed");
+
+                finishAffinity();
+            }
+        };
+        getOnBackPressedDispatcher().addCallback(this, onBackPressedCallback);
     }
 
     @Override
@@ -67,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "end onResume");
     }
 
-    @Override
-    public void onBackPressed(){
-        super.onBackPressed();
-        finishAffinity();
-    }
+//    @Override
+//    public void onBackPressed(){
+//        super.onBackPressed();
+//        finishAffinity();
+//    }
 }

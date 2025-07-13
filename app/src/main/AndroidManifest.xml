@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/catgame_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CatGame"
-        tools:targetApi="33">
+        tools:targetApi="33"
+        android:enableOnBackInvokedCallback="true">
         <activity
             android:name="com.elbourn.android.catgame.DisclaimerActivity"
             android:exported="true">
